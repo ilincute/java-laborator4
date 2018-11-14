@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+
+    <h:head>
+        <title>Optional and Compulsory Packages</title>
+        <h:outputStylesheet library="css" name="table-style.css"/>
+
+    </h:head>
+
+    <h:body>
+        <h2>Optional and Compulsory Packages</h2>
+        <h:inputText id="userName" value="#{courseBean.course}"/>
+        <h:dataTable value="#{courseBean.courses}"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row"
+                     var="record">
+
+            <h:column>
+                <f:facet name="header" >Course Name</f:facet>
+                    #{record.name}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Year of study</f:facet>
+                    #{record.yearOfStudy}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Semester</f:facet>
+                    #{record.semester}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Lecturer</f:facet>
+                    #{record.lecturerId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Study Groups</f:facet>
+                    #{record.studyGroup}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
